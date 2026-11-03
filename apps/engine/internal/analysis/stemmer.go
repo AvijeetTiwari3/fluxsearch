@@ -104,11 +104,10 @@ func step1a(w []rune) []rune {
 	if stem, ok := hasSuffix(w, "ies"); ok {
 		return append(stem, 'i')
 	}
-	if stem, ok := hasSuffix(w, "ss"); ok {
+	if _, ok := hasSuffix(w, "ss"); ok {
 		return w // unchanged
 	}
-	if stem, ok := hasSuffix(w, "s"); ok {
-		_ = stem
+	if _, ok := hasSuffix(w, "s"); ok {
 		return w[:len(w)-1]
 	}
 	return w
