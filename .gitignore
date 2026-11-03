@@ -1,0 +1,14 @@
+node_modules/
+.next/
+dist/
+*.env.local
+*.env.production
+.DS_Store
+*.log
+
+# Go binaries
+apps/engine/fluxsearch
+apps/engine/fluxsearch.exe
+
+# Go test cache
+apps/engine/vendor/

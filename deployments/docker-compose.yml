@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: fluxsearch-postgres
+    environment:
+      POSTGRES_USER: flux_user
+      POSTGRES_PASSWORD: flux_password
+      POSTGRES_DB: fluxsearch_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flux_user -d fluxsearch_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: fluxsearch-redis
+    ports:
+      - "6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  engine:
+    build:
+      context: ../apps/engine
+      dockerfile: Dockerfile
+    container_name: fluxsearch-engine
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: "postgresql://flux_user:flux_password@postgres:5432/fluxsearch_db?sslmode=disable"
+      REDIS_URL: "redis://redis:6379"
+    ports:
+      - "8080:8080"
+      - "10000:10000"
+
+volumes:
+  postgres_data:
