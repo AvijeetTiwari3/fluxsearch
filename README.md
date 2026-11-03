@@ -1,6 +1,8 @@
 # FluxSearch ⚡
 ### *Distributed Full-Text & Semantic Search Engine with BM25 Ranking, HNSW Vector Graph & RRF Fusion*
 
+[![Live Web App](https://img.shields.io/badge/Live%20Console-fluxsearch.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://fluxsearch.vercel.app)
+[![API Engine Status](https://img.shields.io/badge/API%20Engine-fluxsearch--api.onrender.com-46E3B7?style=for-the-badge&logo=render&logoColor=black)](https://fluxsearch-api.onrender.com)
 [![Go Version](https://img.shields.io/badge/Engine-Go%201.22-00ADD8?style=flat&logo=go)](https://go.dev)
 [![Next.js 14](https://img.shields.io/badge/Frontend-Next.js%2014-black?style=flat&logo=next.js)](https://nextjs.org)
 [![Ranking: BM25](https://img.shields.io/badge/Algorithm-Okapi%20BM25-indigo)](#1-okapi-bm25-probabilistic-relevance-formulation)
@@ -12,7 +14,7 @@
 [![Docker Ready](https://img.shields.io/badge/Docker-Multi--Stage-2496ED?logo=docker)](deployments/docker-compose.yml)
 
 > 🌐 **Live Deployments & Infrastructure:**
-> - **Web Search Console (Next.js 14 on Vercel):** *Deploying to Vercel...*
+> - **Web Search Console (Next.js 14 on Vercel):** [https://fluxsearch.vercel.app](https://fluxsearch.vercel.app)
 > - **Distributed Engine API (Go on Render Cloud):** [https://fluxsearch-api.onrender.com](https://fluxsearch-api.onrender.com)
 > - **Engine Health Status:** `curl https://fluxsearch-api.onrender.com/health` $\rightarrow$ `{"status":"UP","docs":7,"terms":132,"version":"1.0.0"}`
 
