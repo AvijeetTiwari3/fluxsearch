@@ -13,8 +13,8 @@
 
 > 🌐 **Live Deployments & Infrastructure:**
 > - **Web Search Console (Next.js 14 on Vercel):** *Deploying to Vercel...*
-> - **Distributed Engine API (Go on Render Cloud):** *Deploying to Render...*
-> - **Engine Health Status:** `GET /health` $\rightarrow$ `{"status":"UP","docs":N,"terms":M,"version":"1.0.0"}`
+> - **Distributed Engine API (Go on Render Cloud):** [https://fluxsearch-api.onrender.com](https://fluxsearch-api.onrender.com)
+> - **Engine Health Status:** `curl https://fluxsearch-api.onrender.com/health` $\rightarrow$ `{"status":"UP","docs":7,"terms":132,"version":"1.0.0"}`
 
 ---
 
