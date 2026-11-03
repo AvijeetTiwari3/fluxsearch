@@ -474,20 +474,6 @@ pnpm dev
 # Open http://localhost:3000 in your browser
 ```
 
----
-
-## 💼 Resume Impact Snippet (For Google / FAANG SDE)
-
-```markdown
-• FluxSearch | Distributed Full-Text & Semantic Hybrid Search Engine [Go 1.22, Next.js 14, PostgreSQL, Redis, Docker]
-  - Engineered high-throughput distributed search engine from first principles in Go, delivering sub-20ms p95 search latency across 10k+ documents with zero external search dependencies.
-  - Formulated Okapi BM25 probabilistic ranking with dynamic Robertson-Spärck Jones IDF and term saturation (k1=1.2, b=0.75), integrated with a custom pure-Go Porter Stemmer (Steps 1–5).
-  - Implemented Hierarchical Navigable Small World (HNSW) vector graph for 384-dimensional dense semantic embeddings, achieving O(log N) convergence and 85x speedup over brute-force scan.
-  - Designed Reciprocal Rank Fusion (RRF) unification layer fusing lexical and semantic score distributions (λ=0.6/0.4, k=60), coupled with a Patricia Radix Trie serving prefix autocomplete in <3ms.
-  - Sustained 2,480 req/s peak throughput at 0.00% error rate under 200 concurrent virtual users in k6 stress testing.
-```
-
----
 
 ## 📄 License
 
