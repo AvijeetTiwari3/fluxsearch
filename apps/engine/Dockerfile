@@ -7,13 +7,10 @@ RUN apk add --no-cache git ca-certificates tzdata
 
 WORKDIR /app
 
-COPY go.mod go.sum ./
-RUN go mod download && go mod verify
-
 COPY . .
 RUN go mod tidy
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
-    go build -ldflags="-w -s -X main.version=$(date +%Y%m%d)" \
+    go build -ldflags="-w -s" \
     -o /fluxsearch ./cmd/server/main.go
 
 # ────────────────────────────────────────────────────────────────
